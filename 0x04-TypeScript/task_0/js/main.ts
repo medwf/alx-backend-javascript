@@ -4,15 +4,17 @@ export interface Student {
   age: number;
   location: string;
 }
+
+
 const studentA: Student = {
-  firstName: "Harry",
-  lastName: "Yoon",
+  firstName: "aaa",
+  lastName: "aaaa",
   age: 22,
-  location: "Seoul, South Korea",
+  location: "South Korea",
 };
 const studentB: Student = {
-  firstName: "Anjali",
-  lastName: "Prajapati",
+  firstName: "cccc",
+  lastName: "ccccc",
   age: 22,
   location: "Lodz, Poland",
 };
@@ -54,11 +56,7 @@ const styleSheet = `
   }
 `;
 
-/**
- * Displays information about students in a table.
- * @param students The list of students to display.
- * @author Bezaleel Olakunori <https://github.com/B3zaleel>
- */
+
 export const displayStudents = (students: Array<Student>): void => {
   const table = document.createElement('table');
   const tableHead = document.createElement('thead');
