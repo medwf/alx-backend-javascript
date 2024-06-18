@@ -29,3 +29,4 @@ All of your functions/classes must be exported by using this format: module.expo
 ## project:
 
 0. Executing basic javascript with Node JS
+1. using process.
