@@ -48,13 +48,17 @@ app.get('/', (_, res) => {
 });
 
 app.get('/students', (_, res) => {
-  res.appendHeader('Content-type', 'text/plain');
+  res.appendHeader('Content-Type', 'text/plain');
   countStudents(nameFile)
     .then((response) => {
-      res.send(`This is the list of our students\n${response}`);
+      const content = `This is the list of our students\n${response}`;
+      res.appendHeader('Content-Length', content.length);
+      res.send(content);
     })
     .catch((err) => {
-      res.send(`This is the list of our students\n${err.message}`);
+      const content = `This is the list of our students\n${err.message}`;
+      res.appendHeader('Content-Length', content.length);
+      res.send(content);
     });
 });
 
