@@ -49,16 +49,16 @@ app.get('/', (_, res) => {
 
 app.get('/students', (_, res) => {
   res.statusCode = 200;
-  res.appendHeader('Content-Type', 'text/plain');
+  res.setHeader('Content-Type', 'text/plain');
   countStudents(nameFile)
     .then((response) => {
       const content = `This is the list of our students\n${response}`;
-      res.appendHeader('Content-Length', content.length);
+      res.setHeader('Content-Length', content.length);
       res.send(content);
     })
     .catch((err) => {
       const content = `This is the list of our students\n${err.message}`;
-      res.appendHeader('Content-Length', content.length);
+      res.setHeader('Content-Length', content.length);
       res.send(content);
     });
 });
