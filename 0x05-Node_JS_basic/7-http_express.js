@@ -48,6 +48,7 @@ app.get('/', (_, res) => {
 });
 
 app.get('/students', (_, res) => {
+  res.statusCode = 200;
   res.appendHeader('Content-Type', 'text/plain');
   countStudents(nameFile)
     .then((response) => {
